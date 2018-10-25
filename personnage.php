@@ -12,7 +12,6 @@ class Personnage // Présence du mot-clé class suivi du nom de la classe.
   const FORCE_GRANDE = 80;
 
   public static $_fart = "Pouet !";
-  public static $_objectNumber = 0;
 
 //accesseurs
   public function degats(){
@@ -37,7 +36,6 @@ class Personnage // Présence du mot-clé class suivi du nom de la classe.
 		$this->setForce($force); // Initialisation de la force.
 		$this->setDegats($degats); // Initialisation des dégâts.
 		$this->_experience = 1; // Initialisation de l'expérience à 1.
-		self::countObjects();
 	}
 
 
@@ -54,6 +52,7 @@ class Personnage // Présence du mot-clé class suivi du nom de la classe.
     	trigger_error('La force d\'un personnage doit être une constante', E_USER_WARNING);
     	return;
   	}
+  }
   
   // Mutateur chargé de modifier l'attribut $_experience.
   public function setExperience($experience)
@@ -99,11 +98,6 @@ class Personnage // Présence du mot-clé class suivi du nom de la classe.
 
     public static function toFart() {
     	echo self::_fart;
-    }
-
-    public static function countObjects()
-    {
-    	self::_objectNumber++;
     }
 
   public function afficherExperience() {
